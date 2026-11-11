@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Writing · Muhammad Arshad</title>
+  <meta name="description" content="Posts and articles by Muhammad Arshad on AI agents, software engineering and research, newest first.">
+  <link rel="canonical" href="https://marshad.pw/blog/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    (function () { try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="wrap site-header">
+    <a class="brand" href="../">Muhammad Arshad</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../#why">About</a>
+      <a href="../#live">Live now</a>
+      <a href="../#research">Research</a>
+      <a href="./">Writing</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch color theme">Theme</button>
+  </header>
+  <main id="content" class="wrap">
+    <header class="page-head">
+      <p class="kicker">Writing</p>
+      <h1>Posts and articles</h1>
+      <p class="lede">What I've written on X, LinkedIn and DEV Community, newest first. Each link opens the original post.</p>
+    </header>
+    <section class="section" aria-label="All posts">
+      <ul class="posts">
+        <li><time datetime="2026-11-06">6 Nov 2026</time><div><a href="https://x.com/marshad_dev/status/2118421843862532532">Most review steps don't need a model</a><span class="where">X</span></div></li>
+        <li><time datetime="2026-11-05">5 Nov 2026</time><div><a href="https://x.com/marshad_dev/status/2118120228483940507">An approve button only works if the amount was checked before you saw it</a><span class="where">X</span></div></li>
+        <li><time datetime="2026-11-05">5 Nov 2026</time><div><a href="https://x.com/marshad_dev/status/2118119659438514366">Usually it's not the model, it's re-reading</a><span class="where">X</span></div></li>
+        <li><time datetime="2026-09-20">20 Sep 2026</time><div><a href="https://www.linkedin.com/posts/marshadofficial_artificialintelligence-medicalimaging-activity-7507236632102666241-80GY">I've just published 5 papers</a><span class="where">LinkedIn</span></div></li>
+        <li><time datetime="2026-07-23">23 Jul 2026</time><div><a href="https://www.linkedin.com/posts/marshadofficial_the-quiet-displacement-the-accountability-activity-7485921690972065792-meGK">Your client adopted AI. Now they own a security liability they have not priced</a><span class="where">LinkedIn</span></div></li>
+        <li><time datetime="2026-03-08">8 Mar 2026</time><div><a href="https://www.linkedin.com/posts/marshadofficial_claude-46-opus-is-currently-the-sota-model-activity-7436154090994401280-6_RK">Claude 4.6 Opus is currently the SOTA model for coding</a><span class="where">LinkedIn</span></div></li>
+        <li><time datetime="2026-03-06">6 Mar 2026</time><div><a href="https://x.com/marshad_dev/status/2029773093955403794">Bypassing the memory wall in lattice gauge theory</a><span class="where">X thread</span></div></li>
+        <li><time datetime="2026-01-16">16 Jan 2026</time><div><a href="https://www.linkedin.com/posts/marshadofficial_agi-systemsengineering-solidstatemedicine-activity-7417721306173042688-TcLS">AGI is hitting a wall. I think it's time we talk about the door</a><span class="where">LinkedIn</span></div></li>
+        <li><time datetime="2022-05-06">6 May 2022</time><div><a href="https://dev.to/marshad/python-in-the-browser-4njk">Python in the Browser</a><span class="where">DEV Community</span></div></li>
+        <li><time datetime="2022-04-28">28 Apr 2022</time><div><a href="https://dev.to/bitlogix/nodejs-18-released-3je9">Node.JS 18 released</a><span class="where">DEV Community</span></div></li>
+        <li><time datetime="2022-04-28">28 Apr 2022</time><div><a href="https://dev.to/bitlogix/whats-new-in-react-v18-27c8">What's new in React v18</a><span class="where">DEV Community</span></div></li>
+        <li><time datetime="2021-12-27">27 Dec 2021</time><div><a href="https://dev.to/bitlogix/is-xamarin-really-dead-57e2">Is Xamarin really dead?</a><span class="where">DEV Community</span></div></li>
+        <li><time datetime="2021-12-21">21 Dec 2021</time><div><a href="https://dev.to/bitlogix/hot-swapping-the-web-api-for-mobile-application-3ch8">Hot-swapping the Web API for mobile application</a><span class="where">DEV Community</span></div></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="wrap site-footer">
+    <p>© 2026 Muhammad Arshad · Lahore</p>
+    <p>This site has no analytics or third-party scripts.</p>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById("theme-toggle"); if (!btn) return;
+      function current() { var s = document.documentElement.getAttribute("data-theme"); if (s === "light" || s === "dark") return s; return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"; }
+      function label(m) { btn.setAttribute("aria-label", m === "dark" ? "Switch to light theme" : "Switch to dark theme"); btn.textContent = m === "dark" ? "Light" : "Dark"; }
+      label(current());
+      btn.addEventListener("click", function () { var n = current() === "dark" ? "light" : "dark"; document.documentElement.setAttribute("data-theme", n); try { localStorage.setItem("theme", n); } catch (e) {} label(n); });
+    })();
+  </script>
+</body>
+</html>
