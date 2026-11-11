@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE ONLY. NOT PUBLISHED CONTENT.
+  The leading underscore keeps GitHub Pages (Jekyll) from publishing this file.
+  To write a post: copy to blog/YYYY-MM-DD-short-title.html, replace every [BRACKETED] value,
+  delete the red banner and the robots noindex line, then add the post to the top of blog/index.html
+  and (if it should show on the home page) to the #writing list in /index.html.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>[POST TITLE] · Muhammad Arshad</title>
+  <meta name="description" content="[ONE-SENTENCE SUMMARY]">
+  <link rel="canonical" href="https://marshad.pw/blog/[FILE-NAME].html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    (function () { try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+  </script>
+</head>
+<body>
+  <div class="template-banner">Template: not a published post</div>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="wrap site-header">
+    <a class="brand" href="../">Muhammad Arshad</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../#why">About</a>
+      <a href="../#live">Live now</a>
+      <a href="../#research">Research</a>
+      <a href="./">Writing</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch color theme">Theme</button>
+  </header>
+  <main id="content" class="wrap">
+    <article>
+      <header class="page-head">
+        <p class="kicker"><time datetime="[YYYY-MM-DD]">[D Mon YYYY]</time></p>
+        <h1>[POST TITLE]</h1>
+      </header>
+      <div class="section">
+        <p>[Opening paragraph.]</p>
+        <h2>[Section heading]</h2>
+        <p>[Paragraph. Link every claim to something a reader can check.]</p>
+      </div>
+      <p class="row"><a href="./">← All writing</a></p>
+    </article>
+  </main>
+  <footer class="wrap site-footer">
+    <p>© 2026 Muhammad Arshad · Lahore</p>
+    <p>This site has no analytics or third-party scripts.</p>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById("theme-toggle"); if (!btn) return;
+      function current() { var s = document.documentElement.getAttribute("data-theme"); if (s === "light" || s === "dark") return s; return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"; }
+      function label(m) { btn.setAttribute("aria-label", m === "dark" ? "Switch to light theme" : "Switch to dark theme"); btn.textContent = m === "dark" ? "Light" : "Dark"; }
+      label(current());
+      btn.addEventListener("click", function () { var n = current() === "dark" ? "light" : "dark"; document.documentElement.setAttribute("data-theme", n); try { localStorage.setItem("theme", n); } catch (e) {} label(n); });
+    })();
+  </script>
+</body>
+</html>
