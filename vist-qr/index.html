@@ -143,7 +143,7 @@
           <p class="founder-role">Chief Executive Officer · MAGSpace</p>
         </div>
       </div>
-      <a class="campaign-label" id="campaign-label" href="https://www.gitex.com/" target="_blank" rel="noopener noreferrer" hidden>GITEX GLOBAL</a>
+      <span class="campaign-label" id="campaign-label" hidden>GITEX GLOBAL</span>
       <p class="eyebrow" id="service-label" style="margin-top:1.6rem;color:#92d5c6">CUSTOM AI AGENT DEVELOPMENT</p>
       <h1 id="hero-headline">Start with the work your business wants to improve.</h1>
       <p class="hero-copy" id="hero-copy">We start with the people who do the work—then design AI around your systems, data and decisions.</p>
@@ -278,7 +278,7 @@
 
     <footer class="site-footer">
       <p>MAGSpace · Custom AI agent development</p>
-      <p><a href="https://themagspace.com/">Company</a> · <a href="https://www.gitex.com/" target="_blank" rel="noopener noreferrer">GITEX GLOBAL</a></p>
+      <p><a href="https://themagspace.com/">Company</a></p>
     </footer>
   </main>
 
@@ -329,8 +329,7 @@
           const ends = config.endsAt ? Date.parse(config.endsAt) : Infinity;
           const validStart = Number.isFinite(starts) || starts === -Infinity;
           const validEnd = Number.isFinite(ends) || ends === Infinity;
-          const eventUrl = new URL(config.eventUrl || "https://www.gitex.com/");
-          if (config.active !== true || !validStart || !validEnd || now < starts || now >= ends || eventUrl.protocol !== "https:") {
+          if (config.active !== true || !validStart || !validEnd || now < starts || now >= ends) {
             document.getElementById("hero-headline").textContent = fallback.headline;
             document.getElementById("hero-copy").textContent = fallback.support;
             document.getElementById("campaign-label").hidden = true;
@@ -341,7 +340,6 @@
           document.getElementById("hero-copy").textContent = config.support;
           const label = document.getElementById("campaign-label");
           label.textContent = config.label || "Current campaign";
-          label.href = eventUrl.href;
           label.hidden = false;
         } catch (error) {
           document.getElementById("hero-headline").textContent = fallback.headline;
