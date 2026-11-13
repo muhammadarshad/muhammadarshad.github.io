@@ -2,112 +2,355 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex,follow">
-  <meta name="theme-color" content="#12110e">
-  <title>Muhammad Arshad · MAGSpace</title>
-  <meta name="description" content="Contact Muhammad Arshad, CEO of MAGSpace, and explore the products we're building.">
+  <meta name="theme-color" content="#10213b">
+  <title>Muhammad Arshad · Custom AI Agent Development · MAGSpace</title>
+  <meta name="description" content="Bring MAGSpace the workflow your business wants an AI agent to handle. Start with the people doing the work.">
   <link rel="canonical" href="https://marshad.pw/vist-qr/">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .card-page { width: min(100% - 2rem, 42rem); margin-inline: auto; padding-block: 1rem 2.5rem; }
-    .card-top { display: flex; align-items: center; gap: 1rem; padding-block: .75rem 1.25rem; border-bottom: 1px solid var(--line); }
-    .card-top .portrait { width: 5.25rem; height: 5.25rem; }
-    .card-top h1 { font-size: clamp(1.7rem, 7vw, 2.45rem); }
-    .card-top .role { color: var(--muted); margin: .15rem 0 0; }
-    .wordmark { margin-left: auto; color: var(--accent); font-family: var(--serif); font-size: 1.1rem; text-decoration: none; white-space: nowrap; }
-    .campaign { margin-block: 1.25rem; padding: 1rem 1.1rem; border: 1px solid var(--accent); border-radius: var(--radius); background: var(--bg-soft); }
-    .campaign[hidden] { display: none; }
-    .campaign .kicker { margin-bottom: .3rem; }
-    .campaign h2 { margin: 0 0 .45rem; font-size: 1.5rem; }
-    .campaign-copy { color: var(--muted); white-space: pre-line; margin: 0 0 .8rem; }
-    .campaign-cta { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; padding: .55rem 1rem; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; }
-    .campaign-cta:hover { color: var(--bg); filter: brightness(1.08); }
-    .card-section { padding-block: 1.35rem; border-top: 1px solid var(--line); }
-    .card-section h2 { font-size: 1.45rem; margin-bottom: .6rem; }
-    .card-links { display: grid; grid-template-columns: 1fr; gap: .55rem; margin: .7rem 0 0; padding: 0; list-style: none; }
-    .card-links a { display: flex; min-height: 2.85rem; align-items: center; justify-content: space-between; gap: .75rem; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--bg-soft); text-decoration: none; overflow-wrap: anywhere; }
-    .card-links a:hover { border-color: var(--accent); }
-    .card-links small { color: var(--muted); font-size: .8rem; }
-    .contact-actions { display: grid; grid-template-columns: 1fr; gap: .55rem; }
-    .contact-actions a { display: flex; min-height: 2.85rem; align-items: center; justify-content: space-between; gap: .75rem; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--bg-soft); text-decoration: none; overflow-wrap: anywhere; }
-    .contact-actions a:hover { border-color: var(--accent); }
-    .card-footer { padding-top: 1rem; border-top: 1px solid var(--line); color: var(--faint); font-size: .82rem; }
-    @media (min-width: 34rem) { .card-links, .contact-actions { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 25rem) { .wordmark { font-size: .95rem; } .card-top .portrait { width: 4.25rem; height: 4.25rem; } }
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fa; --bg-soft: #fff; --ink: #10213b; --muted: #4f5f74; --faint: #738198;
+      --line: #d8e0e9; --accent: #e0b866; --link: #086c60; --focus: #bc7a16;
+      --navy: #10213b; --blue: #174c79; --blue-light: #78bad2; --emerald: #087164; --gold: #e0b866;
+      --radius: 1rem; --content: 68rem;
+    }
+    body { background: var(--bg); color: var(--ink); font-size: 1rem; line-height: 1.55; }
+    a { color: var(--link); }
+    .card-page { width: min(100% - 1.25rem, 68rem); margin-inline: auto; padding-block: .65rem 5.75rem; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .35rem .2rem .75rem; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: .65rem; color: var(--navy); text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
+    .brand-lockup img { width: 2rem; height: 2rem; border-radius: .55rem; }
+    .card-url { color: var(--muted); font-size: .85rem; text-decoration: none; }
+    .hero { position: relative; overflow: hidden; isolation: isolate; padding: clamp(1.2rem, 4vw, 2.7rem); border-radius: 1.25rem; color: #f5f8fb; background: linear-gradient(130deg, var(--navy) 0%, #163a61 56%, #0c594f 100%); box-shadow: 0 16px 46px rgba(16,33,59,.16); }
+    .founder { display: flex; align-items: center; gap: .9rem; }
+    .founder img { flex: none; width: 4.15rem; height: 4.15rem; border: 2px solid rgba(224,184,102,.9); border-radius: 50%; object-fit: cover; object-position: 50% 30%; }
+    .founder-name { margin: 0; color: #fff; font-size: 1.12rem; font-weight: 700; }
+    .founder-role { margin: .1rem 0 0; color: #d4e0eb; font-size: .9rem; }
+    .campaign-label { display: inline-flex; margin-top: 1.65rem; align-items: center; gap: .55rem; color: #f2cf83; font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .campaign-label::before { width: .42rem; height: .42rem; border-radius: 50%; background: var(--gold); content: ""; }
+    .campaign-label:hover { color: #fff; }
+    .hero h1 { max-width: 13ch; margin: .55rem 0 .75rem; color: #fff; font-size: clamp(2.35rem, 8.2vw, 5.1rem); font-weight: 600; line-height: 1.01; letter-spacing: -.045em; }
+    .hero-copy { max-width: 42rem; margin: 0; color: #dce7ef; font-size: clamp(1.02rem, 2.3vw, 1.25rem); line-height: 1.55; }
+    .hero-note { max-width: 40rem; margin: .8rem 0 0; color: #b9cedb; font-size: .95rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-top: 1.45rem; }
+    .button { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; gap: .55rem; padding: .7rem 1rem; border: 1px solid transparent; border-radius: .7rem; font: 700 .94rem/1.2 var(--sans); text-decoration: none; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: var(--gold); color: #15253c; box-shadow: 0 5px 14px rgba(0,0,0,.16); }
+    .button-primary:hover { background: #f0ce83; color: #10213b; }
+    .button-secondary { border-color: rgba(255,255,255,.42); color: #fff; background: rgba(255,255,255,.07); }
+    .button-secondary:hover { color: #fff; border-color: #fff; background: rgba(255,255,255,.12); }
+    .hero-links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; margin-top: 1.1rem; color: #d1e0eb; font-size: .9rem; }
+    .hero-links a { color: #d1e0eb; text-underline-offset: .2em; }
+    .hero-links a:hover { color: #fff; }
+    .section { padding-block: clamp(1.4rem, 4vw, 2.35rem); border-bottom: 1px solid var(--line); }
+    .section-heading { max-width: 48rem; margin-bottom: 1.15rem; }
+    .eyebrow { margin: 0 0 .35rem; color: var(--emerald); font-size: .73rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .section h2 { margin: 0; color: var(--navy); font-size: clamp(1.55rem, 4vw, 2.2rem); font-weight: 600; letter-spacing: -.025em; line-height: 1.15; }
+    .section-intro { max-width: 46rem; margin: .65rem 0 0; color: var(--muted); }
+    .work-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .work-copy, .work-intake { min-width: 0; padding: 1.15rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
+    .work-copy h3, .work-intake h3 { margin: 0 0 .4rem; color: var(--navy); font-size: 1.1rem; }
+    .work-copy p { margin: .45rem 0 0; color: var(--muted); }
+    .work-copy strong { color: var(--ink); }
+    .work-intake { box-shadow: 0 7px 22px rgba(16,33,59,.05); }
+    .field { display: grid; gap: .35rem; margin-top: .8rem; }
+    .field label { color: var(--navy); font-size: .88rem; font-weight: 700; }
+    .field input, .field select, .field textarea { width: 100%; min-width: 0; padding: .7rem .75rem; border: 1px solid #bdcad8; border-radius: .55rem; background: #fff; color: var(--ink); font: 400 .98rem/1.45 var(--sans); }
+    .field textarea { min-height: 7rem; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #65758a; opacity: 1; }
+    .field-note { margin: .5rem 0 0; color: var(--muted); font-size: .8rem; }
+    .intake-action { margin-top: .85rem; }
+    .intake-action .button { width: 100%; }
+    .direct-email { display: block; margin-top: .7rem; color: var(--muted); font-size: .84rem; text-align: center; overflow-wrap: anywhere; }
+    .readiness-card { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; padding: 1rem 1.1rem; border-radius: var(--radius); background: #e8f1f3; }
+    .readiness-card p { margin: 0; color: var(--muted); }
+    .readiness-card .button { background: var(--emerald); color: #fff; }
+    .readiness-card .button:hover { background: #07584f; color: #fff; }
+    .readiness-note { margin-top: .55rem !important; font-size: .8rem; }
+    .pitch-link { display: flex; align-items: center; gap: .85rem; padding: 1rem 0; color: var(--navy); text-decoration: none; }
+    .pitch-link:hover .pitch-title { text-decoration: underline; }
+    .play-mark { display: grid; flex: none; width: 2.65rem; height: 2.65rem; place-items: center; border: 1px solid #c3d0dc; border-radius: 50%; color: var(--emerald); background: #fff; font-size: .85rem; }
+    .pitch-title { display: block; font-weight: 700; }
+    .pitch-note { display: block; color: var(--muted); font-size: .83rem; }
+    .products-grid { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+    .product { display: grid; grid-template-columns: 3.3rem minmax(0,1fr) auto; align-items: center; gap: .8rem; min-width: 0; padding: .85rem; border: 1px solid var(--line); border-radius: .85rem; background: #fff; color: var(--ink); text-decoration: none; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+    .product:hover { transform: translateY(-2px); border-color: #9db7c7; box-shadow: 0 8px 20px rgba(16,33,59,.07); }
+    .product-logo { display: grid; width: 3.3rem; height: 3.3rem; place-items: center; overflow: hidden; border-radius: .75rem; background: #f2f5f8; }
+    .product-logo img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+    .product-logo .wide { width: 3rem; height: 2.4rem; }
+    .product-logo .mark { width: 2.6rem; height: 2.6rem; }
+    .product-logo .misgenie { width: 3rem; height: 2rem; }
+    .product-name { display: block; color: var(--navy); font-weight: 750; line-height: 1.2; }
+    .product-copy { display: block; margin-top: .3rem; color: var(--muted); font-size: .8rem; line-height: 1.4; }
+    .product-arrow { color: var(--emerald); font-size: 1.1rem; }
+    .contact-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem 1rem; padding-block: 1.1rem .35rem; }
+    .contact-strip p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .contact-strip a { font-weight: 700; }
+    .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; padding-block: 1.15rem; color: var(--faint); font-size: .82rem; }
+    .site-footer p { margin: 0; }
+    .site-footer a { color: var(--muted); }
+    .mobile-sticky { position: fixed; z-index: 5; inset: auto 0 0; display: none; padding: .6rem max(.75rem, env(safe-area-inset-right)) calc(.6rem + env(safe-area-inset-bottom)) max(.75rem, env(safe-area-inset-left)); border-top: 1px solid rgba(16,33,59,.12); background: rgba(243,246,250,.94); backdrop-filter: blur(12px); }
+    .mobile-sticky .button { width: 100%; background: var(--emerald); color: #fff; }
+    .mobile-sticky .button:hover { background: #07584f; color: #fff; }
+    [hidden] { display: none !important; }
+    @media (min-width: 38rem) {
+      .card-page { width: min(100% - 2.5rem, 68rem); padding-top: 1rem; }
+      .hero { padding: clamp(2rem, 5vw, 3.5rem); }
+      .founder img { width: 4.6rem; height: 4.6rem; }
+      .work-grid { grid-template-columns: minmax(0,1.1fr) minmax(19rem,.9fr); }
+      .products-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .readiness-card { flex-direction: row; align-items: center; justify-content: space-between; }
+      .readiness-card .button { flex: none; }
+    }
+    @media (min-width: 60rem) { .products-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+    @media (max-width: 37.99rem) {
+      .card-page { padding-bottom: 5.2rem; }
+      .mobile-sticky { display: block; }
+      .hero h1 { max-width: 12ch; }
+      .hero-actions .button { flex: 1 1 100%; }
+      .hero-links { gap: .35rem .8rem; }
+    }
+    @media (max-width: 23rem) {
+      .card-page { width: min(100% - 1rem, 68rem); }
+      .product { grid-template-columns: 2.85rem minmax(0,1fr) auto; gap: .6rem; padding: .7rem; }
+      .product-logo { width: 2.85rem; height: 2.85rem; }
+      .founder img { width: 3.55rem; height: 3.55rem; }
+      .hero { padding: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
   </style>
 </head>
 <body>
   <main class="card-page">
-    <header class="card-top">
-      <img class="portrait" src="../assets/portrait.jpg" width="120" height="120" alt="Muhammad Arshad" decoding="async">
-      <div>
-        <h1>Muhammad Arshad</h1>
-        <p class="role">Chief Executive Officer, MAGSpace</p>
-      </div>
-      <a class="wordmark" href="https://themagspace.com/" aria-label="MAGSpace website">MAGSpace</a>
+    <header class="topbar">
+      <a class="brand-lockup" href="https://themagspace.com/" aria-label="MAGSpace home">
+        <img src="../assets/products/magspace.svg" width="36" height="36" alt="">
+        <span>MAGSpace</span>
+      </a>
+      <a class="card-url" href="https://marshad.pw/vist-qr/">Scan to connect · marshad.pw/vist-qr</a>
     </header>
 
-    <section class="campaign" id="campaign" aria-labelledby="campaign-title" hidden>
-      <p class="kicker">Current campaign</p>
-      <h2 id="campaign-title"></h2>
-      <p class="campaign-copy" id="campaign-copy"></p>
-      <a class="campaign-cta" id="campaign-cta" href="https://themagspace.com/">Learn more</a>
-    </section>
-
-    <section class="card-section" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Get in touch</h2>
-      <div class="contact-actions">
-        <a href="mailto:marshad@themagspace.com">Email <span>marshad@themagspace.com</span></a>
-        <a href="https://www.linkedin.com/in/marshadofficial/" target="_blank" rel="noopener noreferrer">LinkedIn <span>Connect</span></a>
-        <a href="https://themagspace.com/" target="_blank" rel="noopener noreferrer">MAGSpace <span>Company website</span></a>
+    <section class="hero" aria-labelledby="hero-headline">
+      <div class="founder">
+        <img src="../assets/portrait.jpg" width="120" height="120" alt="Muhammad Arshad" decoding="async">
+        <div>
+          <p class="founder-name">Muhammad Arshad</p>
+          <p class="founder-role">Chief Executive Officer · MAGSpace</p>
+        </div>
+      </div>
+      <a class="campaign-label" id="campaign-label" href="https://www.gitex.com/" target="_blank" rel="noopener noreferrer" hidden>GITEX GLOBAL</a>
+      <p class="eyebrow" id="service-label" style="margin-top:1.6rem;color:#92d5c6">CUSTOM AI AGENT DEVELOPMENT</p>
+      <h1 id="hero-headline">Start with the work your business wants to improve.</h1>
+      <p class="hero-copy" id="hero-copy">We start with the people who do the work—then design AI around your systems, data and decisions.</p>
+      <p class="hero-note" id="hero-note">Important know-how often lives with the team, not in a website or dataset. Bring the workflow and we’ll learn how it really works.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://themag.space/readiness/">Scope my AI agent <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" data-project-mailto href="mailto:marshad@themagspace.com?subject=Discuss%20a%20custom%20AI%20agent">Discuss my project</a>
+      </div>
+      <div class="hero-links">
+        <a href="/vist-qr/muhammad-arshad.vcf" download="Muhammad-Arshad.vcf">Save my contact</a>
+        <a href="https://www.linkedin.com/in/marshadofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://youtu.be/gtiyeJwGs6M" target="_blank" rel="noopener noreferrer">Watch my 60-second pitch</a>
       </div>
     </section>
 
-    <section class="card-section" aria-labelledby="products-heading">
-      <h2 id="products-heading">Products</h2>
-      <ul class="card-links">
-        <li><a href="https://siliqunta.com/" target="_blank" rel="noopener noreferrer"><span>Siliqun Rotor</span><small>Open ↗</small></a></li>
-        <li><a href="https://dastaan.hazirgenie.com/" target="_blank" rel="noopener noreferrer"><span>Dastaan</span><small>Open ↗</small></a></li>
-        <li><a href="https://hazirgenie.com/" target="_blank" rel="noopener noreferrer"><span>HazirGenie</span><small>Open ↗</small></a></li>
-        <li><a href="https://nobatgenie.com/" target="_blank" rel="noopener noreferrer"><span>NobatGenie</span><small>Open ↗</small></a></li>
-        <li><a href="https://rawaajgenie.com/" target="_blank" rel="noopener noreferrer"><span>RawaajGenie</span><small>Open ↗</small></a></li>
-        <li><a href="https://misgenie.com/" target="_blank" rel="noopener noreferrer"><span>MisGenie</span><small>Open ↗</small></a></li>
-      </ul>
+    <section class="section" id="project" aria-labelledby="project-heading">
+      <div class="section-heading">
+        <p class="eyebrow">A useful first conversation</p>
+        <h2 id="project-heading">Start with one workflow.</h2>
+        <p class="section-intro">Tell us where work gets stuck, who knows the process, and what you’d like an agent to handle. The project brief opens in your email app; this page doesn’t submit or store it.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-copy">
+          <h3>Bring the know-how with you.</h3>
+          <p><strong>The important detail may be in a person’s head.</strong> We’ll start with the people doing the work and map the steps, exceptions, decisions and handoffs before proposing an agent.</p>
+          <p>Your team keeps control of its data and decisions. The readiness studio can help frame a workflow and action limits before a project discussion.</p>
+        </div>
+        <div class="work-intake">
+          <h3>Shape a project note</h3>
+          <div class="field">
+            <label for="company">Company <span>(optional)</span></label>
+            <input id="company" name="company" autocomplete="organization" maxlength="100" placeholder="Your company">
+          </div>
+          <div class="field">
+            <label for="workflow">Workflow to explore</label>
+            <select id="workflow" name="workflow">
+              <option value="">Choose a starting point</option>
+              <option>Sales follow-up or growth</option>
+              <option>Compliance or document review</option>
+              <option>Inventory or revenue leakage</option>
+              <option>Customer support</option>
+              <option>People, payroll or operations</option>
+              <option>Clinic workflow</option>
+              <option>Another business workflow</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="task">Where does the work get stuck?</label>
+            <textarea id="task" name="task" maxlength="1200" placeholder="A few sentences are enough. What happens today, and what would you like an agent to do?"></textarea>
+          </div>
+          <div class="field">
+            <label for="next-step">What would be useful next?</label>
+            <select id="next-step" name="next-step">
+              <option>Scope an AI agent</option>
+              <option>Explore a first pilot</option>
+              <option>Discuss systems, data and action limits</option>
+            </select>
+          </div>
+          <div class="intake-action">
+            <a class="button button-primary" data-project-mailto href="mailto:marshad@themagspace.com?subject=Discuss%20a%20custom%20AI%20agent">Discuss my project</a>
+          </div>
+          <p class="field-note">Your answers stay in this page until you choose to open your own email draft. Nothing is sent automatically.</p>
+          <a class="direct-email" href="mailto:marshad@themagspace.com">marshad@themagspace.com</a>
+        </div>
+      </div>
     </section>
 
-    <footer class="card-footer">MAGSpace · Building useful software with people in control.</footer>
+    <section class="section" aria-labelledby="readiness-heading">
+      <div class="readiness-card">
+        <div>
+          <p class="eyebrow">MAGSpace Decision Brief Studio</p>
+          <h2 id="readiness-heading">Frame a workflow before you commit.</h2>
+          <p>Start from a business website or a few sentences. Edit the workflow, action limits and ownership, then take away a 12-slide PDF and editable PowerPoint.</p>
+          <p class="readiness-note">No email gate. A readiness score appears only after all 14 answers are confirmed.</p>
+        </div>
+        <a class="button" href="https://themag.space/readiness/">Open the readiness studio <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pitch-heading">
+      <div class="section-heading">
+        <p class="eyebrow">The idea behind the work</p>
+        <h2 id="pitch-heading">Why start with the business?</h2>
+        <p class="section-intro">AI matters when it helps with a real business problem. The people doing the work know where the decisions, exceptions and unwritten rules are.</p>
+      </div>
+      <a class="pitch-link" href="https://youtu.be/gtiyeJwGs6M" target="_blank" rel="noopener noreferrer">
+        <span class="play-mark" aria-hidden="true">▶</span>
+        <span><span class="pitch-title">Watch Muhammad’s 60-second pitch</span><span class="pitch-note">Opens the video on YouTube. No autoplay.</span></span>
+      </a>
+    </section>
+
+    <section class="section" aria-labelledby="products-heading">
+      <div class="section-heading">
+        <p class="eyebrow">MAGSpace products</p>
+        <h2 id="products-heading">A portfolio built around real work.</h2>
+        <p class="section-intro">The products below show the kinds of workflows we work on. Custom agent development starts with your business and its people.</p>
+      </div>
+      <div class="products-grid">
+        <a class="product" href="https://siliqunta.com/" target="_blank" rel="noopener noreferrer">
+          <span class="product-logo"><img class="wide" src="../assets/products/siliqun-rotor.svg" alt="Siliqun Rotor logo"></span>
+          <span><span class="product-name">Siliqun Rotor</span><span class="product-copy">Decision engine for AI agents: act, ask or stop.</span></span><span class="product-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="product" href="https://dastaan.hazirgenie.com/" target="_blank" rel="noopener noreferrer">
+          <span class="product-logo"><span class="product-name text-product">Dastaan</span></span>
+          <span><span class="product-name">Dastaan</span><span class="product-copy">Short founder videos made from a few sentences in your own words.</span></span><span class="product-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="product" href="https://hazirgenie.com/" target="_blank" rel="noopener noreferrer">
+          <span class="product-logo"><img class="mark" src="../assets/products/hazirgenie.svg" alt="HazirGenie logo"></span>
+          <span><span class="product-name">HazirGenie</span><span class="product-copy">Ready-made agents for online stores and service desks.</span></span><span class="product-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="product" href="https://nobatgenie.com/" target="_blank" rel="noopener noreferrer">
+          <span class="product-logo"><img class="wide" src="../assets/products/nobatgenie.svg" alt="NobatGenie logo"></span>
+          <span><span class="product-name">NobatGenie</span><span class="product-copy">Clinic operations for UAE practices, from queue to payroll.</span></span><span class="product-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="product" href="https://rawaajgenie.com/" target="_blank" rel="noopener noreferrer">
+          <span class="product-logo"><img class="mark" src="../assets/products/rawaajgenie.svg" alt="RawaajGenie logo"></span>
+          <span><span class="product-name">RawaajGenie</span><span class="product-copy">Go-to-market, brand and growth platform.</span></span><span class="product-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="product" href="https://misgenie.com/" target="_blank" rel="noopener noreferrer">
+          <span class="product-logo"><img class="misgenie" src="../assets/products/misgenie.svg" alt="MisGenie logo"></span>
+          <span><span class="product-name">MisGenie</span><span class="product-copy">People, payroll and operations for growing companies.</span></span><span class="product-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-strip" aria-label="Direct contact">
+      <p>Have a specific project in mind?</p>
+      <a href="mailto:marshad@themagspace.com">marshad@themagspace.com</a>
+      <a href="https://www.linkedin.com/in/marshadofficial/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      <a href="/vist-qr/muhammad-arshad.vcf" download="Muhammad-Arshad.vcf">Save contact</a>
+    </section>
+
+    <footer class="site-footer">
+      <p>MAGSpace · Custom AI agent development</p>
+      <p><a href="https://themagspace.com/">Company</a> · <a href="https://www.gitex.com/" target="_blank" rel="noopener noreferrer">GITEX GLOBAL</a></p>
+    </footer>
   </main>
+
+  <div class="mobile-sticky"><a class="button" href="https://themag.space/readiness/">Scope my AI agent <span aria-hidden="true">→</span></a></div>
+
   <script>
-    (async function () {
-      const panel = document.getElementById("campaign");
-      try {
-        const configUrl = new URL("campaign.json?ts=" + Date.now(), window.location.href);
-        const response = await fetch(configUrl, { cache: "no-store" });
-        if (!response.ok) return;
-        const config = await response.json();
-        const now = Date.now();
-        const starts = config.startsAt ? Date.parse(config.startsAt) : -Infinity;
-        const ends = config.endsAt ? Date.parse(config.endsAt) : Infinity;
-        const validDates = Number.isFinite(starts) || starts === -Infinity;
-        const validEnd = Number.isFinite(ends) || ends === Infinity;
-        if (config.active !== true || !validDates || !validEnd || now < starts || now >= ends) return;
-        if (![config.headline, config.body, config.ctaLabel, config.ctaUrl].every(value => typeof value === "string" && value.trim())) return;
+    (function () {
+      const mailLinks = document.querySelectorAll("[data-project-mailto]");
+      const company = document.getElementById("company");
+      const workflow = document.getElementById("workflow");
+      const task = document.getElementById("task");
+      const nextStep = document.getElementById("next-step");
 
-        const ctaUrl = new URL(config.ctaUrl, window.location.origin);
-        if (ctaUrl.protocol !== "https:" && ctaUrl.origin !== window.location.origin) return;
-
-        document.getElementById("campaign-title").textContent = config.headline;
-        document.getElementById("campaign-copy").textContent = config.body;
-        const cta = document.getElementById("campaign-cta");
-        cta.textContent = config.ctaLabel;
-        cta.href = ctaUrl.href;
-        panel.hidden = false;
-      } catch (error) {
-        // The permanent profile remains complete when campaign config is unavailable.
+      function updateProjectDraft() {
+        const subject = "Discuss a custom AI agent";
+        const lines = [
+          "Hi Muhammad,",
+          "",
+          "I'd like to discuss a custom AI agent.",
+          "Company: " + (company.value.trim() || "Not specified"),
+          "Workflow: " + (workflow.value || "Not specified"),
+          "Where the work gets stuck: " + (task.value.trim() || "I’ll add a few details here."),
+          "Useful next step: " + nextStep.value,
+          ""
+        ];
+        const href = "mailto:marshad@themagspace.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\r\n"));
+        mailLinks.forEach(link => { link.href = href; });
       }
+
+      [company, workflow, task, nextStep].forEach(field => {
+        field.addEventListener("input", updateProjectDraft);
+        field.addEventListener("change", updateProjectDraft);
+      });
+      updateProjectDraft();
+
+      async function applyCampaign() {
+        const fallback = {
+          headline: "Start with the work your business wants to improve.",
+          support: "We start with the people who do the work—then design AI around your systems, data and decisions."
+        };
+        try {
+          const configUrl = new URL("campaign.json?ts=" + Date.now(), window.location.href);
+          const response = await fetch(configUrl, { cache: "no-store" });
+          if (!response.ok) return;
+          const config = await response.json();
+          const now = Date.now();
+          const starts = config.startsAt ? Date.parse(config.startsAt) : -Infinity;
+          const ends = config.endsAt ? Date.parse(config.endsAt) : Infinity;
+          const validStart = Number.isFinite(starts) || starts === -Infinity;
+          const validEnd = Number.isFinite(ends) || ends === Infinity;
+          const eventUrl = new URL(config.eventUrl || "https://www.gitex.com/");
+          if (config.active !== true || !validStart || !validEnd || now < starts || now >= ends || eventUrl.protocol !== "https:") {
+            document.getElementById("hero-headline").textContent = fallback.headline;
+            document.getElementById("hero-copy").textContent = fallback.support;
+            document.getElementById("campaign-label").hidden = true;
+            return;
+          }
+          if (typeof config.headline !== "string" || !config.headline.trim() || typeof config.support !== "string" || !config.support.trim()) return;
+          document.getElementById("hero-headline").textContent = config.headline;
+          document.getElementById("hero-copy").textContent = config.support;
+          const label = document.getElementById("campaign-label");
+          label.textContent = config.label || "Current campaign";
+          label.href = eventUrl.href;
+          label.hidden = false;
+        } catch (error) {
+          document.getElementById("hero-headline").textContent = fallback.headline;
+          document.getElementById("hero-copy").textContent = fallback.support;
+          document.getElementById("campaign-label").hidden = true;
+        }
+      }
+
+      applyCampaign();
     })();
   </script>
 </body>

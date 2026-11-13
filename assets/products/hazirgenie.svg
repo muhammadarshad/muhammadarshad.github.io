@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none" role="img" aria-label="HazirGenie mark">
+  <rect width="36" height="36" rx="9" fill="#18181B"/>
+  <!-- Geometric Hazir ض/ح arch + Golden Genie Nuqta with Star inside -->
+  <path d="M7 15H11V24C11 26.8 9.4 28.5 6.5 28.5H5.5L5.8 25.5H6.3C7.2 25.5 7.6 25 7.6 24V15H7ZM11 19H14.5V15H18V17.5C19.2 16 21.2 15 23.5 15C27 15 29.2 17.3 29.2 21V26H14.5V19H11ZM18 22.8H25.8V21C25.8 19.2 24.7 18.1 22.9 18.1C21.1 18.1 19.2 19.3 18 21.2V22.8Z" fill="#FAF8F5"/>
+  <!-- Golden Genie Nuqta Dot above the arch -->
+  <rect x="17.5" y="4.5" width="9" height="9" rx="2.5" fill="#F0A202"/>
+  <!-- 4-point Genie Star cutout inside the Nuqta -->
+  <path d="M22 6L22.9 8.1L25 9L22.9 9.9L22 12L21.1 9.9L19 9L21.1 8.1L22 6Z" fill="#18181B"/>
+</svg>
