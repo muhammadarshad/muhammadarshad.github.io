@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#12110e">
+  <title>Muhammad Arshad · MAGSpace</title>
+  <meta name="description" content="Contact Muhammad Arshad, CEO of MAGSpace, and explore the products we're building.">
+  <link rel="canonical" href="https://marshad.pw/vist-qr/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .card-page { width: min(100% - 2rem, 42rem); margin-inline: auto; padding-block: 1rem 2.5rem; }
+    .card-top { display: flex; align-items: center; gap: 1rem; padding-block: .75rem 1.25rem; border-bottom: 1px solid var(--line); }
+    .card-top .portrait { width: 5.25rem; height: 5.25rem; }
+    .card-top h1 { font-size: clamp(1.7rem, 7vw, 2.45rem); }
+    .card-top .role { color: var(--muted); margin: .15rem 0 0; }
+    .wordmark { margin-left: auto; color: var(--accent); font-family: var(--serif); font-size: 1.1rem; text-decoration: none; white-space: nowrap; }
+    .campaign { margin-block: 1.25rem; padding: 1rem 1.1rem; border: 1px solid var(--accent); border-radius: var(--radius); background: var(--bg-soft); }
+    .campaign[hidden] { display: none; }
+    .campaign .kicker { margin-bottom: .3rem; }
+    .campaign h2 { margin: 0 0 .45rem; font-size: 1.5rem; }
+    .campaign-copy { color: var(--muted); white-space: pre-line; margin: 0 0 .8rem; }
+    .campaign-cta { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; padding: .55rem 1rem; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; }
+    .campaign-cta:hover { color: var(--bg); filter: brightness(1.08); }
+    .card-section { padding-block: 1.35rem; border-top: 1px solid var(--line); }
+    .card-section h2 { font-size: 1.45rem; margin-bottom: .6rem; }
+    .card-links { display: grid; grid-template-columns: 1fr; gap: .55rem; margin: .7rem 0 0; padding: 0; list-style: none; }
+    .card-links a { display: flex; min-height: 2.85rem; align-items: center; justify-content: space-between; gap: .75rem; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--bg-soft); text-decoration: none; overflow-wrap: anywhere; }
+    .card-links a:hover { border-color: var(--accent); }
+    .card-links small { color: var(--muted); font-size: .8rem; }
+    .contact-actions { display: grid; grid-template-columns: 1fr; gap: .55rem; }
+    .contact-actions a { display: flex; min-height: 2.85rem; align-items: center; justify-content: space-between; gap: .75rem; padding: .65rem .85rem; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--bg-soft); text-decoration: none; overflow-wrap: anywhere; }
+    .contact-actions a:hover { border-color: var(--accent); }
+    .card-footer { padding-top: 1rem; border-top: 1px solid var(--line); color: var(--faint); font-size: .82rem; }
+    @media (min-width: 34rem) { .card-links, .contact-actions { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 25rem) { .wordmark { font-size: .95rem; } .card-top .portrait { width: 4.25rem; height: 4.25rem; } }
+  </style>
+</head>
+<body>
+  <main class="card-page">
+    <header class="card-top">
+      <img class="portrait" src="../assets/portrait.jpg" width="120" height="120" alt="Muhammad Arshad" decoding="async">
+      <div>
+        <h1>Muhammad Arshad</h1>
+        <p class="role">Chief Executive Officer, MAGSpace</p>
+      </div>
+      <a class="wordmark" href="https://themag.space/" aria-label="MAGSpace website">MAGSpace</a>
+    </header>
+
+    <section class="campaign" id="campaign" aria-labelledby="campaign-title" hidden>
+      <p class="kicker">Current campaign</p>
+      <h2 id="campaign-title"></h2>
+      <p class="campaign-copy" id="campaign-copy"></p>
+      <a class="campaign-cta" id="campaign-cta" href="https://themag.space/">Learn more</a>
+    </section>
+
+    <section class="card-section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in touch</h2>
+      <div class="contact-actions">
+        <a href="mailto:marshad@themag.space">Email <span>marshad@themag.space</span></a>
+        <a href="https://www.linkedin.com/in/marshadofficial/" target="_blank" rel="noopener noreferrer">LinkedIn <span>Connect</span></a>
+        <a href="https://themag.space/" target="_blank" rel="noopener noreferrer">MAGSpace <span>Company website</span></a>
+      </div>
+    </section>
+
+    <section class="card-section" aria-labelledby="products-heading">
+      <h2 id="products-heading">Products</h2>
+      <ul class="card-links">
+        <li><a href="https://siliqunta.com/" target="_blank" rel="noopener noreferrer"><span>Siliqun Rotor</span><small>Open ↗</small></a></li>
+        <li><a href="https://dastaan.hazirgenie.com/" target="_blank" rel="noopener noreferrer"><span>Dastaan</span><small>Open ↗</small></a></li>
+        <li><a href="https://hazirgenie.com/" target="_blank" rel="noopener noreferrer"><span>HazirGenie</span><small>Open ↗</small></a></li>
+        <li><a href="https://nobatgenie.com/" target="_blank" rel="noopener noreferrer"><span>NobatGenie</span><small>Open ↗</small></a></li>
+        <li><a href="https://rawaajgenie.com/" target="_blank" rel="noopener noreferrer"><span>RawaajGenie</span><small>Open ↗</small></a></li>
+        <li><a href="https://misgenie.com/" target="_blank" rel="noopener noreferrer"><span>MisGenie</span><small>Open ↗</small></a></li>
+      </ul>
+    </section>
+
+    <footer class="card-footer">MAGSpace · Building useful software with people in control.</footer>
+  </main>
+  <script>
+    (async function () {
+      const panel = document.getElementById("campaign");
+      try {
+        const configUrl = new URL("campaign.json?ts=" + Date.now(), window.location.href);
+        const response = await fetch(configUrl, { cache: "no-store" });
+        if (!response.ok) return;
+        const config = await response.json();
+        const now = Date.now();
+        const starts = config.startsAt ? Date.parse(config.startsAt) : -Infinity;
+        const ends = config.endsAt ? Date.parse(config.endsAt) : Infinity;
+        const validDates = Number.isFinite(starts) || starts === -Infinity;
+        const validEnd = Number.isFinite(ends) || ends === Infinity;
+        if (config.active !== true || !validDates || !validEnd || now < starts || now >= ends) return;
+        if (![config.headline, config.body, config.ctaLabel, config.ctaUrl].every(value => typeof value === "string" && value.trim())) return;
+
+        const ctaUrl = new URL(config.ctaUrl, window.location.origin);
+        if (ctaUrl.protocol !== "https:" && ctaUrl.origin !== window.location.origin) return;
+
+        document.getElementById("campaign-title").textContent = config.headline;
+        document.getElementById("campaign-copy").textContent = config.body;
+        const cta = document.getElementById("campaign-cta");
+        cta.textContent = config.ctaLabel;
+        cta.href = ctaUrl.href;
+        panel.hidden = false;
+      } catch (error) {
+        // The permanent profile remains complete when campaign config is unavailable.
+      }
+    })();
+  </script>
+</body>
+</html>
